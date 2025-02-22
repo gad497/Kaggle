@@ -5,6 +5,7 @@ from sklearn.compose import make_column_selector, make_column_transformer
 from sklearn.model_selection import train_test_split
 from tensorflow import keras
 from tensorflow.keras import layers
+import matplotlib.pyplot as plt
 
 fuel_df = pd.read_csv("fuel.csv")
 X = fuel_df.copy()
@@ -33,3 +34,4 @@ history = model.fit(
 )
 history.df = pd.DataFrame(history.history)
 history.df['loss'].plot()
+plt.show()
